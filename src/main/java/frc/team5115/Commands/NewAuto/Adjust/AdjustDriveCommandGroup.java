@@ -5,25 +5,29 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
-import frc.team5115.Subsystems.Drivetrain.*;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import frc.team5115.Subsystems.*;
+
 import static frc.team5115.Constants.*;
+
 import frc.team5115.Robot.*;
+import frc.team5115.Subsystems.Software.Drivetrain;
+import frc.team5115.Subsystems.Software.IntakeMotor;
+import frc.team5115.Subsystems.Software.Drivetrain.*;
 
 public class AdjustDriveCommandGroup extends SequentialCommandGroup {
         Drivetrain drivetrain;
-        Latch camera;
+        IntakeMotor intake;
 
     
 
-    public AdjustDriveCommandGroup(Drivetrain drivetrain, Latch latch){
+    public AdjustDriveCommandGroup(Drivetrain drivetrain, IntakeMotor intake){
         this.drivetrain = drivetrain;
+        this.intake = intake;
         addCommands(
         //Adjusts Angle
         //new AdjustAngle(drivetrain),
 
-       new AdjustDistance(drivetrain, latch)
+       new AdjustDistance(drivetrain, intake)
 
      //   new Stop(drivetrain)
         );

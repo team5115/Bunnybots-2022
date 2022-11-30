@@ -4,7 +4,6 @@ public class Constants{
 
     public static final boolean MECANUM = true; 
   
-
     //motor ids
     public static final byte FRONT_LEFT_MOTOR_ID = 1;
     public static final byte FRONT_RIGHT_MOTOR_ID = 2;
@@ -44,7 +43,7 @@ public class Constants{
     public static final double MaxArea = 0.1;
     public static final double kA = 0.1; 
     public static final double TARGET_ANGLE = 1;
-    public static final double ULTRASONIC_UNIT_CONVERSION = (10000/45.927);
+    public static final double ULTRASONIC_UNIT_CONVERSION = (10000.0/45.927);
     public static final double D1 = 1;
    // public static final StartingConfiguration startingConfiguration = StartingConfiguration.Middle;
     public static final double startY = 120;
@@ -57,7 +56,7 @@ public class Constants{
     public static final double AUTO_HIGH_GOAL_HEIGHT = 40.5; //units: centimeters (temporary).
     public static final double HUB_DISTANCE = 231; //units: centimeters.
 
-    public enum Pipeline {
+    /*public enum Pipeline {
         DriveCamera, Balls, GreenLedMode;
         public int getPipelineNumber() {
             switch(this) {
@@ -71,6 +70,7 @@ public class Constants{
             return -1;
         }
     }
+    */
 }
 
 

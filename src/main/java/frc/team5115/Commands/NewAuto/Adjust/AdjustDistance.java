@@ -2,7 +2,9 @@ package frc.team5115.Commands.NewAuto.Adjust;
 
 import java.lang.Math;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.team5115.Subsystems.*;
+import frc.team5115.Subsystems.Software.Drivetrain;
+import frc.team5115.Subsystems.Software.IntakeMotor;
+
 import static frc.team5115.Constants.*;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.Timer;
@@ -10,12 +12,12 @@ import edu.wpi.first.wpilibj.Timer;
 
 public class AdjustDistance extends CommandBase {
     Drivetrain drivetrain;
-    Latch latch;
+    IntakeMotor intake;
     Timer timer;
 
-    public AdjustDistance(Drivetrain drivetrain, Latch latch) {
+    public AdjustDistance(Drivetrain drivetrain, IntakeMotor intake) {
         this.drivetrain = drivetrain;
-        this.latch = latch;
+        this.intake = intake;
     }
 
     @Override
@@ -37,6 +39,7 @@ public class AdjustDistance extends CommandBase {
     @Override
         public void end(boolean interupted){
             drivetrain.stop();
+            intake.forwardIntake();
             
             //camera.setClimbAngle();
             //NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").setNumber(0);
@@ -49,9 +52,7 @@ public class AdjustDistance extends CommandBase {
             //     return true;
             //}
             
-            if(drivetrain.EncoderDistance() > 5){
-                return true;
-            }
+                //move 51.5 inches
 
             if(timer.get() >  5){
                 return true;
