@@ -8,25 +8,25 @@ import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
 public class Latch extends SubsystemBase{
-  /*  private DoubleSolenoid intake = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 0, 1);    
     private Compressor comp = new Compressor(PneumaticsModuleType.CTREPCM);
-    private double max = 120;
-
+    private DoubleSolenoid latch1 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 0, 1);    
+    private DoubleSolenoid latch2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 2, 3);    
     
     public Latch(){
-        comp.enableAnalog(0, max);
     }
 
     public void setPressureLimit(double x){
-        max = x;
-    }
-
-    public void close(){
-        intake.set(Value.kForward);
     }
 
     public void open(){
-        intake.set(Value.kReverse);
+        latch1.set(Value.kForward);
+        latch2.set(Value.kForward);
     }
-    */
+
+    public void close(){
+        latch1.set(Value.kReverse);
+        latch2.set(Value.kReverse);
+
+    }
+    
 }

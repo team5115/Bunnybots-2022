@@ -7,6 +7,8 @@ import static frc.team5115.Constants.*;
 import frc.team5115.Subsystems.Acessory.*; 
 
 public class HardwareDrivetrain{
+// tell electrical to make pdp ids the same as can ids
+
     private TalonSRX frontLeft = new TalonSRX(FRONT_LEFT_MOTOR_ID);
     private TalonSRX frontRight = new TalonSRX(FRONT_RIGHT_MOTOR_ID);
     private TalonSRX backLeft = new TalonSRX(BACK_LEFT_MOTOR_ID);
@@ -36,11 +38,13 @@ public class HardwareDrivetrain{
         throttle.switchThrottle();
     }
 
+    //ONE BY ONE CHECK THE DRIVE MOTORS TO CHECK IF THEYRE REVERSED
+
     public void plugAndChugDrive(double frontleftspeed, double frontrightspeed, double backleftspeed, double backrightspeed){
-        frontLeft.set(ControlMode.PercentOutput, frontleftspeed*throttle.getThrottle());
-        frontRight.set(ControlMode.PercentOutput, frontrightspeed*throttle.getThrottle());
-        backLeft.set(ControlMode.PercentOutput, backleftspeed*throttle.getThrottle());
-        backRight.set(ControlMode.PercentOutput, backrightspeed*throttle.getThrottle());
+        frontLeft.set(ControlMode.PercentOutput, frontleftspeed);//*throttle.getThrottle());
+        frontRight.set(ControlMode.PercentOutput, frontrightspeed);//*throttle.getThrottle());
+        backLeft.set(ControlMode.PercentOutput, backleftspeed);//*throttle.getThrottle());
+        backRight.set(ControlMode.PercentOutput, backrightspeed);//*throttle.getThrottle());
     }
 
     public void resetEncoder(){

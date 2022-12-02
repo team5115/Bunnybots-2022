@@ -22,7 +22,6 @@ public class AdjustDistance extends CommandBase {
 
     @Override
         public void initialize(){
-            timer.reset();
             timer.start();
             //NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").setNumber(1);
         }
@@ -37,9 +36,8 @@ public class AdjustDistance extends CommandBase {
         }
 
     @Override
-        public void end(boolean interupted){
+        public void end(boolean interrupted){
             drivetrain.stop();
-            intake.forwardIntake();
             
             //camera.setClimbAngle();
             //NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").setNumber(0);

@@ -3,34 +3,45 @@ package frc.team5115.Subsystems.Software;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.team5115.Subsystems.Hardware.HardwareIntakeMotor;
 import static frc.team5115.Constants.*;
+import edu.wpi.first.wpilibj.Timer;
+
 
 public class IntakeMotor extends SubsystemBase{
     private HardwareIntakeMotor intake;
-    private double currentLimit = 1000;
+    private double vLimit = 1;
 
     public IntakeMotor(){
         intake = new HardwareIntakeMotor();
     }
 
     public void forwardIntake(){
-        while(intake.getEncoder()>-10){
-            if(intake.getCurrent()>currentLimit){
-                intake.setSpeed(0);
-                break;
-            }
-            System.out.println(intake.getEncoder());
-            intake.setSpeed(-.1);
-            
-        }
+        /*if(intake.getVelocity() < 2){
+            break;
+        }*/
+        intake.setSpeed(-0.2);
+    }
+
+    public double getEncoder(){
+        return intake.getEncoder();
     }
 
     public void reverseIntake(){
-        while(intake.getEncoder()<=-1){
-            if(intake.getCurrent()>currentLimit){
-                intake.setSpeed(0);
+            /*if(intake.getVelocity() < 2){
                 break;
-            }
+            }*/
             intake.setSpeed(0.2);
     }
+
+    public void startUp(){
+        intake.setSpeed(0.2);
+        intake.resetEncoder();
+    }
+
+    public void stop(){
+        intake.setSpeed(0.0);
+    }
+
+    public void stopNegative(){
+        intake.setSpeed(-0.0);
     }
 }

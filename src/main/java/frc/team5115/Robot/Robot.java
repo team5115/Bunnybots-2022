@@ -12,6 +12,7 @@ public class Robot extends TimedRobot {
     public void robotInit() {
         robotContainer = new RobotContainer();
         timer = new Timer();
+        timer.start();
     }
 
     @Override
@@ -40,7 +41,6 @@ public class Robot extends TimedRobot {
 
     public void teleopInit () {
         robotContainer.startTeleop();
-        robotContainer.setDriveDefault();
     }
     
     public void teleopPeriodic () {

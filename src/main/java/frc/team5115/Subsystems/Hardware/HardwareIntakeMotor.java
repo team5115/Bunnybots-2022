@@ -12,6 +12,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 public class HardwareIntakeMotor extends SubsystemBase{
     private CANSparkMax intake;
     private RelativeEncoder intakeEncoder;
+    private double startEncoderValue;
 
     public HardwareIntakeMotor(){
         intake = new CANSparkMax(LEFT_CLIMBER_MOTOR_ID, MotorType.kBrushless);    
@@ -22,16 +23,24 @@ public class HardwareIntakeMotor extends SubsystemBase{
         return intake.getOutputCurrent();
     }
 
+    public void resetEncoder(){
+        startEncoderValue = intakeEncoder.getPosition();
+    }
+
     public double getEncoder(){
-        return intakeEncoder.getPosition();
+        return (intakeEncoder.getPosition()-startEncoderValue);
     }
 
     public double getEncoderDeg(){
-       return (intakeEncoder.getPosition())*(360/42);
+       return (getEncoder())*(360/42);
     }
 
     public double getEncoderRad(){
-        return (getEncoderDeg()/180)*Math.PI*2;
+        return (getEncoderDeg()/180)*Math.PI;
+    }
+
+    public double getVelocity(){
+        return intakeEncoder.getVelocity();
     }
 
     public void setSpeed(double x){
