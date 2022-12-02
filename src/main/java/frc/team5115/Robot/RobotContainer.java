@@ -1,22 +1,17 @@
 package frc.team5115.Robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
-import static frc.team5115.Constants.*;
-
-import frc.team5115.Commands.*;
+import frc.team5115.Classes.Software.Drivetrain;
+import frc.team5115.Classes.Software.IntakeMotor;
+import frc.team5115.Classes.Software.Latch;
+import frc.team5115.Commands.Auto.AutoCommandGroup;
 import frc.team5115.Commands.Intake.*;
+import frc.team5115.Commands.Startup.StartupIntake;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.networktables.NetworkTableInstance;
-import frc.team5115.Commands.NewAuto.AutoCommandGroup;
-import frc.team5115.Commands.NewAuto.Adjust.AdjustDistance;
-import frc.team5115.Subsystems.Software.Drivetrain;
-import frc.team5115.Subsystems.Software.IntakeMotor;
-import frc.team5115.Subsystems.Software.Latch;
 
 public class RobotContainer {
 
@@ -46,7 +41,7 @@ public class RobotContainer {
         new JoystickButton( joy, 1).whenPressed(new IntakeForward(intakemotor));
         new JoystickButton( joy, 2).whenPressed(new IntakeReverse(intakemotor));
         //new JoystickButton( joy, 1).whenHeld(new InstantCommand(intakemotor::forwardIntake)).whenReleased(intakemotor::stop);
-        new JoystickButton( joy, 3).whenHeld(new InstantCommand(latch::open)).whenReleased(new InstantCommand(latch :: close));
+        new JoystickButton( joy, 3).whenHeld(new InstantCommand(latch::open)).whenReleased(new InstantCommand(latch::close));
         new JoystickButton(joy, 4).whenPressed(new InstantCommand(drivetrain::switchThrottle));
 
 

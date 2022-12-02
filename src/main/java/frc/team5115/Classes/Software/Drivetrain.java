@@ -1,13 +1,12 @@
-package frc.team5115.Subsystems.Software;
+package frc.team5115.Classes.Software;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.team5115.Subsystems.Hardware.HardwareDrivetrain;
+import frc.team5115.Classes.Hardware.HardwareDrivetrain;
 
 import static frc.team5115.Constants.*;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
-import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Timer;
 
 public class Drivetrain extends SubsystemBase{

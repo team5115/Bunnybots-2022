@@ -1,19 +1,14 @@
 package frc.team5115.Commands.Intake;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.team5115.Subsystems.Software.IntakeMotor;
-import frc.team5115.Subsystems.Hardware.HardwareIntakeMotor;
-import frc.team5115.Subsystems.Software.Latch;
-
-import edu.wpi.first.wpilibj.Timer;
+import frc.team5115.Classes.Software.IntakeMotor;
+import frc.team5115.Classes.Software.Latch;
 
 public class IntakeReverse extends CommandBase{
     public IntakeMotor intake;
     public Latch latch;
-    public Timer timer; 
 
     public IntakeReverse(IntakeMotor a){
         intake = a;
-        timer = new Timer();
     }
     public void initialize() {
         intake.reverseIntake();

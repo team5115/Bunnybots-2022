@@ -1,10 +1,12 @@
-package frc.team5115.Subsystems.Hardware;
+package frc.team5115.Classes.Hardware;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
+import frc.team5115.Classes.Acessory.*;
+
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
-import static frc.team5115.Constants.*;
-import frc.team5115.Subsystems.Acessory.*; 
+import static frc.team5115.Constants.*; 
 
 public class HardwareDrivetrain{
 // tell electrical to make pdp ids the same as can ids

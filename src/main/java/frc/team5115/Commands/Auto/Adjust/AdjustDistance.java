@@ -1,12 +1,10 @@
-package frc.team5115.Commands.NewAuto.Adjust;
+package frc.team5115.Commands.Auto.Adjust;
 
 import java.lang.Math;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.team5115.Subsystems.Software.Drivetrain;
-import frc.team5115.Subsystems.Software.IntakeMotor;
+import frc.team5115.Classes.Software.Drivetrain;
+import frc.team5115.Classes.Software.IntakeMotor;
 
-import static frc.team5115.Constants.*;
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.Timer;
 
 
@@ -52,7 +50,7 @@ public class AdjustDistance extends CommandBase {
             
                 //move 51.5 inches
 
-            if(timer.get() >  5){
+            if(timer.get() >  Math.pow(5, 1)){
                 return true;
             }
             return false;

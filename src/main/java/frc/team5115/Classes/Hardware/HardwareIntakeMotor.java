@@ -1,9 +1,8 @@
-package frc.team5115.Subsystems.Hardware;
+package frc.team5115.Classes.Hardware;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import static frc.team5115.Constants.*;
 import com.revrobotics.RelativeEncoder;
-import com.revrobotics.SparkMaxPIDController;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.SparkMaxRelativeEncoder;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;

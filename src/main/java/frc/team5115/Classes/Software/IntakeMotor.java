@@ -1,14 +1,10 @@
-package frc.team5115.Subsystems.Software;
+package frc.team5115.Classes.Software;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.team5115.Subsystems.Hardware.HardwareIntakeMotor;
-import static frc.team5115.Constants.*;
-import edu.wpi.first.wpilibj.Timer;
-
+import frc.team5115.Classes.Hardware.HardwareIntakeMotor;
 
 public class IntakeMotor extends SubsystemBase{
     private HardwareIntakeMotor intake;
-    private double vLimit = 1;
 
     public IntakeMotor(){
         intake = new HardwareIntakeMotor();
