@@ -11,9 +11,6 @@ public class Latch extends SubsystemBase{
     public Latch(){
     }
 
-    public void setPressureLimit(double x){
-    }
-
     public void open(){
         latch1.set(Value.kForward);
         latch2.set(Value.kForward);

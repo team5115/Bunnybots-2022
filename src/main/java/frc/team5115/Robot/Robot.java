@@ -3,6 +3,7 @@ package frc.team5115.Robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.cameraserver.CameraServer;
 
 public class Robot extends TimedRobot {
     private RobotContainer robotContainer;
@@ -41,6 +42,7 @@ public class Robot extends TimedRobot {
 
     public void teleopInit () {
         robotContainer.startTeleop();
+        CameraServer.startAutomaticCapture();
     }
     
     public void teleopPeriodic () {

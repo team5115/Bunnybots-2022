@@ -12,9 +12,11 @@ public class IntakeForward extends CommandBase{
     public IntakeForward(IntakeMotor a){
         intake = a;
         timer = new Timer();
+        timer.start();
     }
     public void initialize() {
         intake.forwardIntake();
+        timer.reset();
     }
 
     public void execute(){
@@ -27,7 +29,11 @@ public class IntakeForward extends CommandBase{
     }
 
     public boolean isFinished() {
-        if(intake.getEncoder()<-14){
+        if(intake.getEncoder()<-13.5){
+            return true;
+        }
+        
+        if(timer.get()>5){
             return true;
         }
 

@@ -11,21 +11,19 @@ public class IntakeMotor extends SubsystemBase{
     }
 
     public void forwardIntake(){
-        /*if(intake.getVelocity() < 2){
-            break;
-        }*/
         intake.setSpeed(-0.2);
     }
 
     public double getEncoder(){
         return intake.getEncoder();
     }
+    
+    public double getSpeed(){
+        return intake.getVelocity();
+    }
 
     public void reverseIntake(){
-            /*if(intake.getVelocity() < 2){
-                break;
-            }*/
-            intake.setSpeed(0.2);
+        intake.setSpeed(0.2);
     }
 
     public void startUp(){

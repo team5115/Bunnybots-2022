@@ -112,14 +112,6 @@ public class Drivetrain extends SubsystemBase{
         return ty.getDouble(0);
     }
 
-    public void oliviaMode(){
-        drivetrain.setThrottle(1);
-    }
-
-    public void adultMode(){
-        drivetrain.setThrottle(1);
-    }
-
     // public double getDistanceFromHub(){
     //     double yAngle = ty.getDouble(0);
     //     d = (AUTO_HIGH_GOAL_HEIGHT - AUTO_CAMERA_HEIGHT) / tan(toRadians(yAngle + AUTO_CAMERA_ANGLE));
