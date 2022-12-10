@@ -3,6 +3,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.team5115.Classes.Software.IntakeMotor;
 import frc.team5115.Classes.Software.Latch;
 import edu.wpi.first.wpilibj.Timer;
+import com.revrobotics.CANSparkMax;
 
 public class IntakeReverse extends CommandBase{
     public IntakeMotor intake;
@@ -34,10 +35,9 @@ public class IntakeReverse extends CommandBase{
             return true;
         }
 
-        if(timer.get()>5){
+        if(timer.get()>2){
             return true;
         }
-
 
         return false;
       }

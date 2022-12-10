@@ -3,6 +3,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.team5115.Classes.Software.IntakeMotor;
 import frc.team5115.Classes.Software.Latch;
 import edu.wpi.first.wpilibj.Timer;
+import com.revrobotics.CANSparkMax;
 
 public class StartupIntake extends CommandBase{
     public IntakeMotor intake;
@@ -18,6 +19,7 @@ public class StartupIntake extends CommandBase{
         //latch.close();
         intake.startUp();
         timer.delay(0.1);
+
     }
 
     @Override
@@ -38,6 +40,9 @@ public class StartupIntake extends CommandBase{
         if(intake.getSpeed()<1){
             return true;
         }
+
+
+
         return false;
       }
 

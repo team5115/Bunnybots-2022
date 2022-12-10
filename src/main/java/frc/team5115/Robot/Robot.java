@@ -24,6 +24,7 @@ public class Robot extends TimedRobot {
     @Override
     public void disabledInit() {
         robotContainer.stopEverything();
+        CameraServer.startAutomaticCapture();
     }
 
     @Override
@@ -51,27 +52,18 @@ public class Robot extends TimedRobot {
     }
 
     public void testInit () {
-        CommandScheduler.getInstance().cancelAll();
+
     }
 
     public void testPeriodic () {
-        
+
     }
 
     public void practiceInit(){
-        robotContainer.startAuto();
+
     }
 
     public void practicePeriodic(){
-        autonomousInit();
-        if(timer.get()<15){
-            autonomousPeriodic();
-        }
-        else{
-        teleopPeriodic();
-        }
-        if(timer.get() == 15){
-            teleopInit();
-        }
+
     }
 }

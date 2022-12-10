@@ -1,6 +1,6 @@
 package frc.team5115.Commands.Auto;
 
-import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import frc.team5115.Classes.Software.Drivetrain;
 import frc.team5115.Classes.Software.IntakeMotor;
 import frc.team5115.Classes.Software.Latch;
@@ -8,7 +8,7 @@ import frc.team5115.Commands.Auto.Adjust.AdjustDriveCommandGroup;
 import frc.team5115.Commands.Startup.Startup;
 
 
-public class AutoCommandGroup extends SequentialCommandGroup {
+public class AutoCommandGroup extends ParallelCommandGroup {
   Drivetrain drivetrain;
   IntakeMotor intake;
   Latch latch;

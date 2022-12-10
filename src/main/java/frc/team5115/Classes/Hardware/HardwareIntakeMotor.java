@@ -7,7 +7,6 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.SparkMaxRelativeEncoder;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-
 public class HardwareIntakeMotor extends SubsystemBase{
     private CANSparkMax intake;
     private RelativeEncoder intakeEncoder;
@@ -20,6 +19,10 @@ public class HardwareIntakeMotor extends SubsystemBase{
 
     public double getCurrent(){
         return intake.getOutputCurrent();
+    }
+
+    public boolean getFault(CANSparkMax.FaultID f){
+        return intake.getFault(f);
     }
 
     public void resetEncoder(){

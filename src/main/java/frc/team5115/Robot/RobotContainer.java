@@ -11,7 +11,6 @@ import frc.team5115.Commands.Auto.AutoCommandGroup;
 import frc.team5115.Commands.Intake.*;
 import frc.team5115.Commands.Startup.StartupIntake;
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class RobotContainer {
 
@@ -64,7 +63,7 @@ public class RobotContainer {
     }
 
     public void startAuto(){
-        NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").setNumber(1);
+        //NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").setNumber(1);
         //drivetrain.resetEncoder();
         autocommandgroup.schedule();
 

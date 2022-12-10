@@ -15,7 +15,8 @@ public class HardwareDrivetrain{
     private TalonSRX frontRight = new TalonSRX(FRONT_RIGHT_MOTOR_ID);
     private TalonSRX backLeft = new TalonSRX(BACK_LEFT_MOTOR_ID);
     private TalonSRX backRight = new TalonSRX(BACK_RIGHT_MOTOR_ID);
-    private switchDirection throttle;
+
+private double throttle = 1;
 
     public HardwareDrivetrain(){
         frontLeft.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
@@ -23,7 +24,6 @@ public class HardwareDrivetrain{
         backLeft.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
         backRight.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
         resetEncoder();
-        throttle = new switchDirection(1);
     }
 
     public double getEncoder(int id){
@@ -32,21 +32,19 @@ public class HardwareDrivetrain{
         return (talon.getSelectedSensorPosition()*ENCODER_CALIBRATION);
     }
 
-    public void setThrottle(double throttle){
-        this.throttle.setThrottle(throttle);
-    }
+
     
     public void switchThrottle(){
-        throttle.switchThrottle();
+        throttle = -throttle;
     }
 
     //ONE BY ONE CHECK THE DRIVE MOTORS TO CHECK IF THEYRE REVERSED
 
     public void plugAndChugDrive(double frontleftspeed, double frontrightspeed, double backleftspeed, double backrightspeed){
-        frontLeft.set(ControlMode.PercentOutput, frontleftspeed);//*throttle.getThrottle());
-        frontRight.set(ControlMode.PercentOutput, frontrightspeed);//*throttle.getThrottle());
-        backLeft.set(ControlMode.PercentOutput, backleftspeed);//*throttle.getThrottle());
-        backRight.set(ControlMode.PercentOutput, backrightspeed);//*throttle.getThrottle());
+        frontLeft.set(ControlMode.PercentOutput, frontleftspeed*throttle);//*throttle.getThrottle());
+        frontRight.set(ControlMode.PercentOutput, frontrightspeed*throttle);//*throttle.getThrottle());
+        backLeft.set(ControlMode.PercentOutput, backleftspeed*throttle);//*throttle.getThrottle());
+        backRight.set(ControlMode.PercentOutput, backrightspeed*throttle);//*throttle.getThrottle());
     }
 
     public void resetEncoder(){

@@ -4,10 +4,11 @@ public class switchDirection{
 
     double throttle;
     double throttleOriginal;
-    private double reverseDirectionCount = 0;
+    private static double reverseDirectionCount = 0;
 
     public switchDirection(double throttle){
         this.throttleOriginal = throttle;
+        this.throttle = throttleOriginal;
     }
     public void switchThrottle(){
         throttle = throttleOriginal;
