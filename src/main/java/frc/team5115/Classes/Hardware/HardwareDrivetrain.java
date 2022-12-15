@@ -35,7 +35,7 @@ private double throttle = 1;
 
     
     public void switchThrottle(){
-        throttle = -throttle;
+        //throttle = -throttle;
     }
 
     //ONE BY ONE CHECK THE DRIVE MOTORS TO CHECK IF THEYRE REVERSED

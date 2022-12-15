@@ -52,7 +52,7 @@ public class AdjustDistance extends CommandBase {
             
                 //move 51.5 inches
 
-            if(timer.get() >  5){
+            if(timer.get() >  4.0){
                 return true;
             }
             return false;

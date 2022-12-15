@@ -41,7 +41,7 @@ public class RobotContainer {
         new JoystickButton( joy, 2).whenPressed(new IntakeReverse(intakemotor));
         //new JoystickButton( joy, 1).whenHeld(new InstantCommand(intakemotor::forwardIntake)).whenReleased(intakemotor::stop);
         new JoystickButton( joy, 3).whenHeld(new InstantCommand(latch::open)).whenReleased(new InstantCommand(latch::close));
-        new JoystickButton(joy, 4).whenPressed(new InstantCommand(drivetrain::switchThrottle));
+        //new JoystickButton(joy, 4).whenPressed(new InstantCommand(drivetrain::switchThrottle));
 
 
         //new JoystickButton(joy, SHOOTER_BUTTON_ID).whileHeld(new DelayShootGroupAuto(intake, feeder, shooter)).whenReleased(new Stopeverything(intake, feeder, shooter));

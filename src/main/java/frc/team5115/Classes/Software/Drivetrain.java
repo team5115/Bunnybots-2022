@@ -64,7 +64,7 @@ public class Drivetrain extends SubsystemBase{
     }  
 
     public void autodrive(){
-        drivetrain.plugAndChugDrive(0.30, -0.30, 0.30, -0.30);
+        drivetrain.plugAndChugDrive(0.30, -0.327, 0.30, -0.327);
     }
 
     public void backwardsdrive(){
